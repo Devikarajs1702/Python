@@ -1,11 +1,9 @@
-#Write a Program to reverse the first and second half of a string separately
+txt = input("Enter the string: ")
 
-s=input("Enter the string : ")
+length = len(txt)
+midpoint = length // 2
 
-n=len(s)
-mid=n//2
-
-for i in range(mid-1,-1,-1):
-    print(s[i], end="")
-for i in range(n-1,mid-1,-1):
-    print(s[i], end="")
+for i in range(midpoint - 1, -1, -1):
+    print(txt[i], end="")
+for i in range(length - 1, midpoint - 1, -1):
+    print(txt[i], end="")
