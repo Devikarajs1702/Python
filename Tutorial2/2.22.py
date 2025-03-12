@@ -1,14 +1,11 @@
-""" Program to read a string and remove the given words from the string"""
+def filter_words(text, remove_list):
+    words = text.split()
+    result_words = [word for word in words if word not in remove_list]
+    return " ".join(result_words)
 
-def remove_words(text, words_to_remove):
-    words = text.split()  
-    filtered_words = [word for word in words if word not in words_to_remove]
-    return " ".join(filtered_words) 
+input_text = input("Enter a string: ")
+remove_list = input("Enter words to remove (separated by spaces): ").split()
 
-text = input("Enter a string: ")
-
-words_to_remove = input("Enter words to remove (separated by spaces): ").split()
-
-new_text = remove_words(text, words_to_remove)
+filtered_text = filter_words(input_text, remove_list)
 print("\nString after removing given words:")
-print(new_text)
+print(filtered_text)
