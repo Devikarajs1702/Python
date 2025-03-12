@@ -1,15 +1,7 @@
-""" Write a menu driven program to implement the following
- i)check even or odd
- ii)check number is positive negative or zero
- iii) generate factors of a number"""
+def is_even(num):
+    print(f"{num} is Even" if num % 2 == 0 else f"{num} is Odd")
 
-def check_even_odd(num):
-    if num % 2 == 0:
-        print(f"{num} is Even")
-    else:
-        print(f"{num} is Odd")
-
-def check_number_type(num):
+def num_type(num):
     if num > 0:
         print(f"{num} is Positive")
     elif num < 0:
@@ -17,7 +9,7 @@ def check_number_type(num):
     else:
         print(f"{num} is Zero")
 
-def generate_factors(num):
+def factors(num):
     print(f"Factors of {num}: ", end="")
     for i in range(1, num + 1):
         if num % i == 0:
@@ -33,17 +25,17 @@ while True:
 
     choice = int(input("Enter your choice (1-4): "))
 
+    if choice in (1, 2, 3):
+        num = int(input("Enter a number: "))
+
     if choice == 1:
-        num = int(input("Enter a number: "))
-        check_even_odd(num)
+        is_even(num)
     elif choice == 2:
-        num = int(input("Enter a number: "))
-        check_number_type(num)
+        num_type(num)
     elif choice == 3:
-        num = int(input("Enter a number: "))
-        generate_factors(num)
+        factors(num)
     elif choice == 4:
-        print("Exiting the program. Goodbye!")
+        print("Exiting program. Goodbye!")
         break
     else:
-        print("Invalid choice! Please enter a valid option (1-4).")
+        print("Invalid choice! Enter a valid option (1-4).")
