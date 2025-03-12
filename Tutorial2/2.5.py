@@ -1,18 +1,14 @@
-"""Write a program to slice the string into two separate strings; one with all the
-characters in the odd indices and one with all characters in even indices.
-"""
+txt = input("Enter the string: ")
+chars = list(txt)
+odd = []
+even = []
 
-
-s= input("Enter the string : ")
-list1=list(s)
-odd=[ ]
-even=[]
-for i in range(len(list1)):
-    if i%2==0:
-        even.append(list1[i])
+for i in range(len(chars)):
+    if i % 2 == 0:
+        even.append(chars[i])
     else:
-        odd.append(list1[i])
+        odd.append(chars[i])
 
-print(list1)
-print("even elements = ",even)
-print("odd elements = ",odd)
+print(chars)
+print("Even elements:", even)
+print("Odd elements:", odd)
