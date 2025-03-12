@@ -1,5 +1,10 @@
-def remove_vowels(s):
-    return "".join(char for char in s if char.lower() not in "aeiou")
+def exclude_vowels(text):
+    vowels = "aeiouAEIOU"
+    result = ""
+    for char in text:
+        if char not in vowels:
+            result += char
+    return result
 
-input_string = "Hello, World!"
-print("String after removing vowels:", remove_vowels(input_string))
+sample_text = "Hello, World!"
+print("String after excluding vowels:", exclude_vowels(sample_text))
