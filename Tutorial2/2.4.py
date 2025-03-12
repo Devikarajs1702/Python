@@ -1,11 +1,8 @@
-""" Write a program to replace all the spaces in the input string with * or if no
-spaces found, put $ at the start and end of the string"""
+txt = input("Enter the string: ")
+for ch in txt:
+    if ch == " ":
+        txt = txt.replace(" ", "*")
 
-s=input("Enter the string : ")
-for i in s:
-    if i==" ":
-        s=s.replace(" ","*")
+txt += "$"
 
-s=s+'$'
-
-print(s)
+print(txt)
