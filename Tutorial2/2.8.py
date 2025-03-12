@@ -1,5 +1,5 @@
 txt = input("Enter the string: ")
-old = input("Enter the substring: ")
-new = input("Enter the new substring: ")
+sub1 = input("Enter the substring: ")
+sub2 = input("Enter the new substring: ")
 
-print(txt.replace(old, new))
+print(txt.replace(sub1, sub2))
