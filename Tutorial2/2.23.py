@@ -1,23 +1,19 @@
-"""Program to read list of numbers and find the median"""
-
-def find_median(numbers):
-    numbers.sort()  
-    n = len(numbers)
+def calculate_median(values):
+    values.sort()
+    size = len(values)
     
-    if n % 2 == 1:
-        return numbers[n // 2]  
+    if size % 2 == 1:
+        return values[size // 2]
     else:
-        mid1, mid2 = numbers[n // 2 - 1], numbers[n // 2]  
-        return (mid1 + mid2) / 2  
+        mid1, mid2 = values[size // 2 - 1], values[size // 2]
+        return (mid1 + mid2) / 2
 
-n = int(input("Enter the number of elements: "))
+num_elements = int(input("Enter the number of elements: "))
 
+elements = []
+for i in range(num_elements):
+    value = float(input(f"Enter number {i+1}: "))
+    elements.append(value)
 
-numbers = []
-for i in range(n):
-    num = float(input(f"Enter number {i+1}: ")) 
-    numbers.append(num)
-
-
-median = find_median(numbers)
-print(f"\nThe median is: {median}")
+median_value = calculate_median(elements)
+print(f"\nThe median is: {median_value}")
