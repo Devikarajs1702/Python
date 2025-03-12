@@ -1,8 +1,6 @@
-#Write a program to remove all occurrence of a substring from a string
+txt = input("Enter the string: ")
+subtxt = input("Enter the substring: ")
 
-s= input("Enter the string")
-sub= input("Enter the substring ")
-
-if sub in s:
-    s = s.replace(sub, "")
-    print(s)
+if subtxt in txt:
+    txt = txt.replace(subtxt, "")
+    print(txt)
