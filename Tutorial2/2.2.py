@@ -1,10 +1,7 @@
-# Write a program to remove characters at odd index positions from a string
-
-
-s= input("Enter the string : ")
-result=[]
-for i in range(len(s)):
+text_input = input("Enter the string: ")
+output_chars = []
+for i in range(len(text_input)):
     if i % 2 == 0:
-        result.append(s[i])
+        output_chars.append(text_input[i])
 
-print("".join(result))
+print("".join(output_chars))
