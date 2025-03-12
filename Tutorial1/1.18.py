@@ -1,24 +1,24 @@
-def is_armstrong(num):
-    temp = num
-    digits = 0
-    sum_of_powers = 0
+def check_armstrong(n_value):
+    temp_value = n_value
+    digit_count = 0
+    power_sum = 0
     
-    n = num
-    while n > 0:
-        n //= 10
-        digits += 1
+    num_copy = n_value
+    while num_copy > 0:
+        num_copy //= 10
+        digit_count += 1
 
-    n = temp
-    while n > 0:
-        digit = n % 10
-        sum_of_powers += digit ** digits
-        n //= 10
+    num_copy = temp_value
+    while num_copy > 0:
+        digit = num_copy % 10
+        power_sum += digit ** digit_count
+        num_copy //= 10
 
-    return temp == sum_of_powers
+    return temp_value == power_sum
 
-num = int(input("Enter a number: "))
+number = int(input("Enter a number: "))
 
-if is_armstrong(num):
-    print(f"{num} is an Armstrong number.")
+if check_armstrong(number):
+    print(f"{number} is an Armstrong number.")
 else:
-    print(f"{num} is NOT an Armstrong number.")
+    print(f"{number} is NOT an Armstrong number.")
