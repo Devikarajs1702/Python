@@ -1,10 +1,10 @@
-from math import*
+from math import pi
 
-def areaperi(radius):
-    area=pi*radius**2
-    perimeter=2*pi*radius
-    return f"area is: {area:.2f} & perimeter is: {perimeter:.2f}"
+def circle_area_perimeter(radius):
+    area = pi * radius**2
+    perimeter = 2 * pi * radius
+    return f"Area: {area:.2f} & Perimeter: {perimeter:.2f}"
 
-radius=int(input("Enter the radius of the circle: "))
-calc=areaperi(radius)
-print(calc)
+radius = float(input("Enter the radius of the circle: "))
+result = circle_area_perimeter(radius)
+print(result)
