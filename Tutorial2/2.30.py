@@ -1,13 +1,11 @@
-""" Remove duplicate elements from a list."""
-
-def remove_duplicates(lst):
-    unique_list = []
-    for item in lst:
-        if item not in unique_list:
-            unique_list.append(item)
-    return unique_list
+def rmv_dupes(lst):
+    uniq_lst = []
+    for itm in lst:
+        if itm not in uniq_lst:
+            uniq_lst.append(itm)
+    return uniq_lst
 
 n = int(input("Enter the number of elements: "))
-numbers = [int(input(f"Enter number {i+1}: ")) for i in range(n)]
+nums = [int(input(f"Enter number {i+1}: ")) for i in range(n)]
 
-print(f"\nList after removing duplicates: {remove_duplicates(numbers)}")
+print(f"\nList after removing duplicates: {rmv_dupes(nums)}")
