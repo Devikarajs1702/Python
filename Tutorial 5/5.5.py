@@ -1,3 +1,3 @@
 import pandas as pd
-df = pd.read_excel("input.xlsx")
+df = pd.read_excel("data.xlsx")
 print(df)
