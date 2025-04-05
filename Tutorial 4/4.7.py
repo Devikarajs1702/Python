@@ -20,16 +20,12 @@ class Student:
         print(f"Total: {self.total}")
 
 def main():
-    # Create an object of the Student class
     student = Student()
 
-    # Invoke the readData method
     student.readData()
 
-    # Invoke the computeTotal method
     student.computeTotal()
 
-    # Invoke the printDetails method
     student.printDetails()
 
 if __name__ == "__main__":
