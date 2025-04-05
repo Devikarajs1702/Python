@@ -1,41 +1,24 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
+# Read the CSV file
+df = pd.read_csv("student.csv")
 
-df = pd.read_csv("weather.csv")
+#  1) Find the average CGPA of all students
+average_cgpa = df["CGPA"].mean()
+print(" Average CGPA of Students:", round(average_cgpa, 2))
 
-#Print first 10 rows of weather data
-print("First 10 rows of weather data:")
-print(df.head(10))
+#  2) Display details of students with CGPA > 9
+high_cgpa_students = df[df["CGPA"] > 9]
+print("\n Students with CGPA > 9:\n", high_cgpa_students)
 
-# Find the maximum and minimum temperature
-max_temperature = df["temperature"].max()
-min_temperature = df["temperature"].min()
-print("\nMaximum temperature:", max_temperature)
-print("Minimum temperature:", min_temperature)
+#  3) Display details of CSE students with CGPA > 9
+cse_high_cgpa = df[(df["Branch"] == "CSE") & (df["CGPA"] > 9)]
+print("\n CSE Students with CGPA > 9:\n", cse_high_cgpa)
 
-#List the places with temperature less than 28°C
-places_less_than_28 = df[df["temperature"] < 28][["place", "temperature"]]
-print("\nPlaces with temperature less than 28°C:")
-print(places_less_than_28)
+#  4) Display details of the student with the maximum CGPA
+max_cgpa_student = df[df["CGPA"] == df["CGPA"].max()]
+print("\n Student with Maximum CGPA:\n", max_cgpa_student)
 
-# List the places with weather = “Cloudy”
-cloudy_places = df[df["weather"] == "Cloudy"][["place", "weather"]]
-print("\nPlaces with weather = 'Cloudy':")
-print(cloudy_places)
-
-# Sort and display each weather and its frequency
-weather_frequency = df["weather"].value_counts().sort_index()
-print("\nWeather frequency:")
-print(weather_frequency)
-
-#Create a bar plot to visualize temperature of each day
-plt.figure(figsize=(10,6))
-plt.bar(df["date"], df["temperature"])
-plt.xlabel("Date")
-plt.ylabel("Temperature")
-plt.title("Temperature of each day")
-plt.xticks(rotation=90)
-plt.tight_layout()
-plt.show()
-
+#  5) Display average CGPA of each branch
+branch_avg_cgpa = df.groupby("Branch")["CGPA"].mean()
+print("\n Average CGPA of Each Branch:\n", branch_avg_cgpa)
